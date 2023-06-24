@@ -1,1 +1,1 @@
-docker container stop CONTAINER ${CONTAINER_NAME}
+docker container stop ${CONTAINER_NAME}
