@@ -1,1 +1,35 @@
-docker image ls 
+#!/bin/bash
+
+#setup working environment
+PARENT_DIR=`dirname "$PWD"`
+
+#setup souri=cung files
+CONFIG_FILE=${PARENT_DIR}/bin/config.sh
+FUNCTION_FILE=${PARENT_DIR}/bin/dfunction.sh
+
+if [ "${IS_CONFIG}" != "YES" ]; then
+   echo "run source..."
+   source ${CONFIG_FILE}
+fi
+
+source ${FUNCTION_FILE}
+
+dcmd="docker image ls"
+
+clear
+
+echo "This is the docker command."
+echo "To list all docker images"
+echo ""
+echo "$dcmd"
+echo ""
+read -p "Enter the docker command as shown...: " user_input
+
+if [ "$PROMPT_MODE" == "Yes" ]; then
+    runcmd
+else
+    $dcmd
+
+fi
+
+

@@ -1,1 +1,8 @@
+#!/bin/bash
+if [ "$PROMPT_MODE" == "Yes" ]; then
+    echo "docker build -t jenkins:local_server -f ${DOCKERFILE_PATH}/Dockerfile_with_Conf ."
+else
+    date
+fi
+
 docker build -t jenkins:local_server -f ${DOCKERFILE_PATH}/Dockerfile_with_Conf .

@@ -16,21 +16,18 @@ source ${FUNCTION_FILE}
 
 clear
 
-dcmd="docker system prune -a" 
+dcmd="docker exec -it $CONTAINER_NAME /bin/bash"
 
 echo "This is the docker command."
-echo "To remove all docker images..."
+echo "To ssh login container $CONTAINER_NAME and create a shell session"
 echo ""
 echo "$dcmd"
 echo ""
 
 if [ "$PROMPT_MODE" == "Yes" ]; then
-    read -p "Enter the docker command as shown, without excape back slash ...;" user_input
+    read -p "Enter the docker command as shown...: " user_input
     runcmd
 else
     $dcmd
 
 fi
-
-
-

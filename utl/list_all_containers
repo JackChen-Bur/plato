@@ -16,21 +16,19 @@ source ${FUNCTION_FILE}
 
 clear
 
-dcmd="docker system prune -a" 
+dcmd="docker ps -a"
 
 echo "This is the docker command."
-echo "To remove all docker images..."
+echo "To list all containers...including stopped containers"
 echo ""
 echo "$dcmd"
 echo ""
+read -p "Enter the docker command as shown...: " user_input
 
 if [ "$PROMPT_MODE" == "Yes" ]; then
-    read -p "Enter the docker command as shown, without excape back slash ...;" user_input
     runcmd
 else
     $dcmd
 
 fi
-
-
 
