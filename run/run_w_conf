@@ -19,7 +19,7 @@ clear
 dcmd="docker run --name jenkins --rm -p 8080:8080 jenkins:LTS"
 
 echo "This is the docker command."
-echo "To run container jenkins:LTS mapping port 8080u.."
+echo "To run container jenkins:LTS mapping port 8080.."
 echo ""
 echo "$dcmd"
 echo ""
