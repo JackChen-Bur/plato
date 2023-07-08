@@ -16,10 +16,10 @@ source ${FUNCTION_FILE}
 
 clear
 
-dcmd="docker build -t jenkins:LTS -f ../dockerfiles/Dockerfile_with_Conf ."
+dcmd="docker run --name jenkins --rm -p 8080:8080 jenkins:LTS"
 
 echo "This is the docker command."
-echo "To list all running containers..."
+echo "To run container jenkins:LTS mapping port 8080u.."
 echo ""
 echo "$dcmd"
 echo ""
@@ -31,5 +31,4 @@ else
     $dcmd
 
 fi
-
 
