@@ -23,11 +23,12 @@ echo "To list all docker images"
 echo ""
 echo "$dcmd"
 echo ""
-read -p "Enter the docker command as shown...: " user_input
 
 if [ "$PROMPT_MODE" == "Yes" ]; then
+    read -p "Enter the docker command as shown...: " user_input
     runcmd
 else
+    echo "Prompt Mode Disabled, Running The Docker Command..."
     $dcmd
 
 fi
