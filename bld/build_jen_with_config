@@ -19,7 +19,7 @@ clear
 dcmd="docker build -t jenkins:LTS -f ../dockerfiles/Dockerfile_with_Conf ."
 
 echo "This is the docker command."
-echo "To list all running containers..."
+echo "To build jenkins image..."
 echo ""
 echo "$dcmd"
 echo ""
