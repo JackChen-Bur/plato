@@ -16,8 +16,8 @@ echo  "DOCKERFILE_PATH : ${DOCKERFILE_PATH}"
 echo  "PLUGIN_PATH : ${PLUGIN_PATH}"	
 
 # Set the PROMPT_MODE parameter
-PROMPT_MODE="Yes"
-#PROMPT_MODE="No"
+#PROMPT_MODE="Yes"
+PROMPT_MODE="No"
 export PROMPT_MODE
 
 #Flag config.sh execution
