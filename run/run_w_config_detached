@@ -16,7 +16,7 @@ source ${FUNCTION_FILE}
 
 clear
 
-dcmd="docker run --name jenkins --rm -d -p 8080:8080 jenkins:LTS"
+dcmd="docker run --name jenkins --rm -d -p 8080:8080 --mount source=jenvol,target=/var/jenkins_home jenkins:LTS"
 
 echo "This is the docker command."
 echo "To run container jenkins:LTS mapping port 8080.."
