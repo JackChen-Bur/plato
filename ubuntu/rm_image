@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#setup working environment
+PARENT_DIR=`dirname "$PWD"`
+
+#setup souri=cung files
+CONFIG_FILE=${PARENT_DIR}/bin/config.sh
+FUNCTION_FILE=${PARENT_DIR}/bin/dfunction.sh
+
+if [ "${IS_CONFIG}" != "YES" ]; then
+   echo "run source..."
+   source ${CONFIG_FILE}
+fi
+
+source ${FUNCTION_FILE}
+
+clear
+
+dcmd="docker rmi -f ${CON_UBUNTU_NAME}:latest" 
+
+echo "This is the docker command."
+echo "To run container debian:latest"
+echo ""
+echo "$dcmd"
+echo ""
+
+if [ "$PROMPT_MODE" == "Yes" ]; then
+    read -p "Enter the docker command as shown...: " user_input
+    runcmd
+else
+    $dcmd
+
+fi
+
