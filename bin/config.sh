@@ -6,12 +6,19 @@ export PATH
 
 #setup working environment
 PARENT_DIR=`dirname "$PWD"`
+
 CONTAINER_NAME=jenkins
 CON_UBUNTU_NAME=ubuntu
+CON_DEBIAN_NAME=debian
+
 DOCKERFILE_PATH=${PARENT_DIR}/dockerfiles
 PLUGIN_PATH=${PARENT_DIR}/jenplug
+
 export CONTAINER_NAME
 export DOCKERFILE_PATH
+export CON_UBUNTU_NAME
+export CON_DEBIAN_NAME
+
 echo "CONTAINER_NAME : ${CONTAINER_NAME}"
 echo  "DOCKERFILE_PATH : ${DOCKERFILE_PATH}"	
 echo  "PLUGIN_PATH : ${PLUGIN_PATH}"	
