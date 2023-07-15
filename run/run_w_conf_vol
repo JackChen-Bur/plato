@@ -19,7 +19,7 @@ clear
 dcmd="docker run --name jenkins --rm -p 8080:8080 --mount source=jenvol,target=/var/jenkins_home jenkins:LTS"
 
 echo "This is the docker command."
-echo "To run container jenkins:LTS mapping port 8080 and mounr jenvol volume.."
+echo "To run container jenkins:LTS mapping port 8080 and mount jenvol volume.."
 echo ""
 echo "$dcmd"
 echo ""

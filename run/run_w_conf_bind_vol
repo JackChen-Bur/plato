@@ -19,7 +19,8 @@ clear
 dcmd="docker run --name jenkins -v /Users/jchen/work60/plato/dvol:/home/jen --rm -p 8080:8080 jenkins:LTS"
 
 echo "This is the docker command."
-echo "To run container jenkins:LTS mapping port 8080.."
+echo "To run container jenkins:LTS mapping port 8080 and bind mount "
+echo "local filesystem to container file ssystem.."
 echo ""
 echo "$dcmd"
 echo ""
