@@ -1,15 +1,23 @@
 version: '3.8'
+#This denotes version 3.8 of Docker Compose is used, 
+#Docker will provide the appropriate features
 services:
-  jenkins:
+#Defines all the different containers we will create
+  jenkins: #service to be created
     build:
-      context: .
-      dockerfile: Dockerfile
-    image: jenkins
-    container_name: jenkins
-    ports:
+# Configure the location of our Dockerfile
+# Thw dot . represents the directory 
+#where the docker-compose.yml file is located
+      context: . # location of the docker-composee.yml file
+      dockerfile: Dockerfile # dockerfile used to build container
+    image: jenkins # image will be used
+    container_name: jenkins #name the container
+    ports: #Map the container’s ports to the host machine.
       - "8080:8080"
-    volumes:
-      - jenvol:/var/jenkins_home
+    volumes: #mounting pre-configured volumn in Docker
+      - jenvol:/var/jenkins_home #volumn mounting instruction
 volumes:
   jenvol:
-    external: true
+    external: true 
+#specifies that this volume has been created outside of Compose
+#docker-compose up does not attempt to create it, and raises an error if it doesn’t exist.
